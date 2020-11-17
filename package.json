@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "start": "eleventy --serve & postcss styles/tailwind.css --o _tmp/style.css --watch",
-    "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production postcss styles/tailwind.css --o _site/style.css"
+    "start": "eleventy --serve & postcss styles/tailwind.css --o src/style.css --watch",
+    "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production postcss styles/tailwind.css --o dist/style.css"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
@@ -10,5 +10,8 @@
     "postcss-clean": "^1.1.0",
     "postcss-cli": "^7.1.2",
     "tailwindcss": "^1.9.6"
+  },
+  "dependencies": {
+    "eleventy-plugin-cloudinary": "0.0.1"
   }
 }

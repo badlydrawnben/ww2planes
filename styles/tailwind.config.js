@@ -4,12 +4,15 @@ module.exports = {
     purgeLayersByDefault: true,
   },
   purge: {
-    content: ["_site/**/*.html"],
+    content: [".src/**/*.md"],
     options: {
       whitelist: [],
     },
   },
   theme: {
+    container:{
+      center: true,
+    },
     extend: {
       colors: {
         change: "black",

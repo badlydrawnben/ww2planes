@@ -1,19 +1,37 @@
 const htmlmin = require("html-minifier");
+const pluginCloudinaryImage = require( "eleventy-plugin-cloudinary" );
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
 
-  eleventyConfig.addWatchTarget("./_tmp/style.css");
+  eleventyConfig.addWatchTarget("./src/style.css");
 
-  eleventyConfig.addPassthroughCopy({ "./_tmp/style.css": "./style.css" });
+  eleventyConfig.addPassthroughCopy({ "./src/style.css": "./style.css" });
 
   eleventyConfig.addPassthroughCopy({
     "./node_modules/alpinejs/dist/alpine.js": "./js/alpine.js",
   });
 
+  eleventyConfig.addPassthroughCopy({
+    "./src/js/filter-planes.js": "./js/filter-planes.js",
+  });
+
+  eleventyConfig.cloudinaryCloudName = 'badlydrawnben'
+  eleventyConfig.addShortcode('cloudinaryImage', function (path, transforms, alt) {
+    return `<img src="https://res.cloudinary.com/${eleventyConfig.cloudinaryCloudName}/${transforms}/${path}" alt="${alt}">`
+  })
+
+  eleventyConfig.addPlugin( pluginCloudinaryImage )
+
+
   eleventyConfig.addShortcode("version", function () {
     return String(Date.now());
   });
+
+  // Returns a collection of planes in reverse date order
+  eleventyConfig.addCollection('planes', collection => {
+  return [...collection.getFilteredByGlob('./src/posts/*.md')].reverse();
+});
 
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
     if (
@@ -31,4 +49,11 @@ module.exports = function (eleventyConfig) {
 
     return content;
   });
+  return {
+    dir: {
+      input: 'src',
+      output: 'dist'
+    }
+  };
 };
+

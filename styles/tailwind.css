@@ -1,9 +1,10 @@
 @tailwind base;
 @tailwind components;
+  @layer base {
+    h1{
+      @apply text-6xl;
+    }
+  }
 @tailwind utilities;
 
-@layer utilities {
-  .change {
-    color: black;
-  }
-}
+

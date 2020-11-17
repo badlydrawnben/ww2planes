@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      Toby&#39;s planes
+    </title>
+    <meta charset="UTF-8"/>
+    
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
+    <link rel="stylesheet" href="/style.css?v=1605623635894"/>
+    
+    <script src="/js/alpine.js?v=1605623635894"></script>
+    <script src="/js/filter-planes.js?v=1605623635894"></script>
+  </head>
+  <body>
+  <div class="container px-3 max-w-5xl">
+    
+  <div class="">
+  <h1 class="text-center">World War II planes</h1>
+   <figure x-data="alpine.filter()">
+
+    <form class="margin-top" @submit="preventDefault();">
+      <fieldset>
+        <legend class="u-visually-hidden">Filter planes</legend>
+        <ul class="filters">
+          <li class="filter"><label for="country">Country</label> <select class="margin-top-tenth" id="country" name="country" @change="$nextTick(() => updateResultsCount());" x-model="country">
+              <option value="">Any</option>
+              <option value="USA">USA</option>
+              <option value="UK">UK</option>
+            </select></li>
+          <li class="filter"><label for="planetype">Plane Type</label> <select class="margin-top-tenth" id="planetype" name="planetype" @change="$nextTick(() => updateResultsCount());" x-model="planetype">
+              <option value="">Any</option>
+              <option value="Fighter-bomber">Fighter bomber</option>
+              <option value="Navy-fighter">Navy fighter</option>
+              
+            </select></li>
+            
+        </ul>
+      </fieldset>
+    </form>
+    <div>
+    <ul class="list--unstyled grid gap-2 grid-cols-3"><li class="talk padding-half border-black border-2 js-talk"
+  x-show="(!country || country === 'USA') &amp;&amp; (!planetype || planetype === 'Fighter-bomber')"
+  >
+  <a href="/planes/plane-3/">
+  <img src="https://res.cloudinary.com/badlydrawnben/w_320,f_auto/sample.jpg" alt="Cloudinary Sample Image"> 
+  <div class="p-2 flex flex-col">
+  <h3 class="text-center">Plane 3</h3>
+  <div>country: USA</div>
+  <div>max speed: 420</div>
+  <div>type: Fighter-bomber </div>
+  </div>
+  </a>
+  </li><li class="talk padding-half border-black border-2 js-talk"
+  x-show="(!country || country === 'UK') &amp;&amp; (!planetype || planetype === 'Navy-fighter')"
+  >
+  <a href="/planes/plane-2/">
+  <img src="https://res.cloudinary.com/badlydrawnben/w_320,f_auto/undefined" alt="Cloudinary Sample Image"> 
+  <div class="p-2 flex flex-col">
+  <h3 class="text-center">Plane 2</h3>
+  <div>country: UK</div>
+  <div>max speed: 350</div>
+  <div>type: Navy-fighter </div>
+  </div>
+  </a>
+  </li><li class="talk padding-half border-black border-2 js-talk"
+  x-show="(!country || country === 'USA') &amp;&amp; (!planetype || planetype === 'Navy-fighter')"
+  >
+  <a href="/planes/plane-1/">
+  <img src="https://res.cloudinary.com/badlydrawnben/w_320,f_auto/undefined" alt="Cloudinary Sample Image"> 
+  <div class="p-2 flex flex-col">
+  <h3 class="text-center">Plane 1</h3>
+  <div>country: USA</div>
+  <div>max speed: 400</div>
+  <div>type: Navy-fighter </div>
+  </div>
+  </a>
+  </li></ul>
+</div>
+  </figure>
+  </div>
+
+    </div>
+  </body>
+</html>

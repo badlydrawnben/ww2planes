@@ -17,9 +17,9 @@
             </select></li>
           <li class="filter mx-6"><label for="planetype">Plane Type</label> <select class="border p-2 rounded-md" id="planetype" name="planetype" @change="$nextTick(() => updateResultsCount());" x-model="planetype">
               <option value="">Any</option>
-              <option value="Fighter ">Fighter</option>
+              <option value="Fighter">Fighter</option>
               <option value="Fighter bomber">Fighter bomber</option>
-              <option value="Navy fighter">Navy fighter</option>
+              <option value="Navy Fighter">Navy Fighter</option>
               <option value="Heavy Bomber">Heavy Bomber</option>
           
             </select></li>
@@ -44,7 +44,7 @@
   </div>
   <div class="p-2 flex flex-col relative text-center">
   {# <div class="text-center text-gray-600 text-sm">{{ plane.data.country }}</div> #}
-  <div><img src="/images/{{plane.data.country}}.svg" class="w-16 h-16 mx-auto -mt-8 border-4 border-white rounded-full shadow-md"/></div>
+  <div><img src="/images/{{plane.data.country}}.svg" class="w-16 h-16 mx-auto -mt-10 border-4 border-white rounded-full shadow-md"/></div>
   <h3 class="text-center text-xl font-semibold mt-2">{{ plane.data.title }}</h3>
   <div class="mt-2 text-gray-600"><span class="text-sm text-gray-500">Max speed:</span> {{ plane.data.maxspeed }} <span class="text-sm text-gray-500">MPH</span></div>
   <div class="text-gray-500 uppercase text-sm font-semibold tracking-wide mt-2 mb-4">{{ plane.data.planetype }} </div>

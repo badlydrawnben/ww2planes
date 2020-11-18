@@ -17,6 +17,8 @@ module.exports = function (eleventyConfig) {
     "./src/js/filter-planes.js": "./js/filter-planes.js",
   });
 
+  eleventyConfig.addPassthroughCopy('admin'); // Netlify CMS
+
   eleventyConfig.cloudinaryCloudName = 'badlydrawnben'
   eleventyConfig.addShortcode('cloudinaryImage', function (path, transforms, alt) {
     return `<img src="https://res.cloudinary.com/${eleventyConfig.cloudinaryCloudName}/${transforms}/${path}" alt="${alt}">`

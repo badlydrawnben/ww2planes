@@ -4,6 +4,12 @@
     h1{
       @apply text-6xl;
     }
+    .plane-img{
+      height: 60vh;
+    }
+    .plane-img img{
+      width:100%;
+    }
   }
 @tailwind utilities;
 

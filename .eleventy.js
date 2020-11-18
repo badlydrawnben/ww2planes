@@ -7,6 +7,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/style.css");
 
   eleventyConfig.addPassthroughCopy({ "./src/style.css": "./style.css" });
+  eleventyConfig.addPassthroughCopy( "./src/images/");
 
   eleventyConfig.addPassthroughCopy({
     "./node_modules/alpinejs/dist/alpine.js": "./js/alpine.js",

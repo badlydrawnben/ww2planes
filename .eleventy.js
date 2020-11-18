@@ -32,9 +32,23 @@ module.exports = function (eleventyConfig) {
   });
 
   // Returns a collection of planes in reverse date order
-  eleventyConfig.addCollection('planes', collection => {
-  return [...collection.getFilteredByGlob('./planes/*.md')].reverse();
+//   eleventyConfig.addCollection('planes', collection => {
+//   return [...collection.getFilteredByGlob('./planes/*.md')].reverse();
+// });
+
+ // Returns a collection of planes in country order
+ eleventyConfig.addCollection('planes', collection => {
+  return collection.getFilteredByGlob('./planes/*.md').sort((a, b) => {
+    return (a.data.country) > (b.data.country);
+  });
 });
+
+ // Returns a collection of planes in speed order
+//  eleventyConfig.addCollection('planes', collection => {
+//   return collection.getFilteredByGlob('./planes/*.md').sort((a, b) => {
+//     return Number(a.data.maxspeed) < Number(b.data.maxspeed);
+//   });
+// });
 
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
     if (

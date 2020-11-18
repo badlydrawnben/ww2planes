@@ -33,7 +33,7 @@ module.exports = function (eleventyConfig) {
 
   // Returns a collection of planes in reverse date order
   eleventyConfig.addCollection('planes', collection => {
-  return [...collection.getFilteredByGlob('./src/planes/*.md')].reverse();
+  return [...collection.getFilteredByGlob('./planes/*.md')].reverse();
 });
 
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
@@ -54,8 +54,8 @@ module.exports = function (eleventyConfig) {
   });
   return {
     dir: {
-      input: 'src',
-      output: 'dist'
+      input: '.',
+      output: 'dist',
     }
   };
 };

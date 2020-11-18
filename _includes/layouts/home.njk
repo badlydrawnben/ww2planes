@@ -17,8 +17,10 @@
             </select></li>
           <li class="filter mx-6"><label for="planetype">Plane Type</label> <select class="border p-2 rounded-md" id="planetype" name="planetype" @change="$nextTick(() => updateResultsCount());" x-model="planetype">
               <option value="">Any</option>
-              <option value="Fighter-bomber">Fighter bomber</option>
-              <option value="Navy-fighter">Navy fighter</option>
+              <option value="Fighter ">Fighter</option>
+              <option value="Fighter bomber">Fighter bomber</option>
+              <option value="Navy fighter">Navy fighter</option>
+              <option value="Heavy Bomber">Heavy Bomber</option>
           
             </select></li>
             {# 

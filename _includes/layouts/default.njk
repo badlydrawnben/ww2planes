@@ -12,6 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
     <link rel="stylesheet" href="/style.css?v={% version %}"/>
     {% block head %}{% endblock %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
     <script src="/js/alpine.js?v={% version %}"></script>
     <script src="/js/filter-planes.js?v={% version %}"></script>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -33,5 +35,21 @@
       });
     }
   </script>
+<script>
+  $(document.body).on('click', "#sortthem", function(){
+    console.log('BWARPEEE');
+    var divList = $(".talk");
+    divList.sort(function(a, b){ return $(a).data("maxspeed")-$(b).data("maxspeed")});
+    $(".grid").html(divList);
+});
+function multiSort(fields) {
+    return function (a, b) {
+        return fields
+            .map(function (o) {
+               return $(a).data(o) > $(b).data(o) ?  1 :  $(a).data(o) < $(b).data(o) ? -1 : 0 ;
+            }).reduce(function firstNonZeroValue (el,n) { return el ? el : n }, 0);
+    };
+}
+</script>
   </body>
 </html>

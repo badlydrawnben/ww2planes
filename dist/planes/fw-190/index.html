@@ -1,40 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>
-      Fw 190
-    </title>
-    <meta charset="UTF-8"/>
-    
-    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
-    <link rel="stylesheet" href="/style.css?v=1605730399885"/>
-    
-    <script src="/js/alpine.js?v=1605730399885"></script>
-    <script src="/js/filter-planes.js?v=1605730399885"></script>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  </head>
-  <body class="bg-gray-200 pb-16">
-  <div class="">
-    
-<div class="w-full object-cover overflow-hidden plane-img"><img src="https://res.cloudinary.com/badlydrawnben///Fw_190A-3_JG_2_in_Britain_1942_rkr17v.jpg" alt="Cloudinary Sample Image"></div>
-<div><img src="/images/Germany.svg" class="w-64 h-64 mx-auto -mt-32 border-4 border-white rounded-full shadow-md relative"/></div>
-<div class="container px-3 max-w-5xl">
-<h1 class="text-center">Fw 190</h1>
-<div class="text-center text-gray-600 tracking-wide text-lg uppercase my-2 font-bold">Fighter Bomber</div>
-<div class="text-center text-gray-600 tracking-wide text-sm uppercase mt-2 leading-10">Max-speed (MPH)<br><span class="text-6xl text-gray-700 font-bold leading-10">425</span></div>
-<hr class="mt-2 mb-4"/>
-  <article>
-    <div class="mx-auto max-w-2xl">
-      <p>The Fw 190 fighter-bombers raided targets in southern Britain. They were pursued by Hawker Typhoon fighters.</p>
-
-    </div> 
-  </article>
-  </div>
-
-    </div>
-    <script>
-    if (window.netlifyIdentity) {
+<!doctype html><html lang="en"><head><title>Fw 190</title><meta charset="UTF-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover"><link rel="stylesheet" href="/style.css?v=1605736754646"><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script><script src="/js/alpine.js?v=1605736754646"></script><script src="/js/filter-planes.js?v=1605736754646"></script><script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script></head><body class="bg-gray-200 pb-16"><div class=""><div class="w-full object-cover overflow-hidden plane-img"><img src="https://res.cloudinary.com/badlydrawnben///Fw_190A-3_JG_2_in_Britain_1942_rkr17v.jpg" alt="Cloudinary Sample Image"></div><div><img src="/images/Germany.svg" class="w-64 h-64 mx-auto -mt-32 border-4 border-white rounded-full shadow-md relative"></div><div class="container px-3 max-w-5xl"><h1 class="text-center">Fw 190</h1><div class="text-center text-gray-600 tracking-wide text-lg uppercase my-2 font-bold">Fighter Bomber</div><div class="text-center text-gray-600 tracking-wide text-sm uppercase mt-2 leading-10">Max-speed (MPH)<br><span class="text-6xl text-gray-700 font-bold leading-10">425</span></div><hr class="mt-2 mb-4"><article><div class="mx-auto max-w-2xl"><p>The Fw 190 fighter-bombers raided targets in southern Britain. They were pursued by Hawker Typhoon fighters.</p></div></article></div></div><script>if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
         if (!user) {
           window.netlifyIdentity.on("login", () => {
@@ -42,7 +6,17 @@
           });
         }
       });
-    }
-  </script>
-  </body>
-</html>
+    }</script><script>$(document.body).on('click', "#sortthem", function(){
+    console.log('BWARPEEE');
+    var divList = $(".talk");
+    divList.sort(function(a, b){ return $(a).data("maxspeed")-$(b).data("maxspeed")});
+    $(".grid").html(divList);
+});
+function multiSort(fields) {
+    return function (a, b) {
+        return fields
+            .map(function (o) {
+               return $(a).data(o) > $(b).data(o) ?  1 :  $(a).data(o) < $(b).data(o) ? -1 : 0 ;
+            }).reduce(function firstNonZeroValue (el,n) { return el ? el : n }, 0);
+    };
+}</script></body></html>

@@ -39,14 +39,14 @@ module.exports = function (eleventyConfig) {
  // Returns a collection of planes in country order
  eleventyConfig.addCollection('planes', collection => {
   return collection.getFilteredByGlob('./planes/*.md').sort((a, b) => {
-    return (a.data.country) > (b.data.country);
+    return (a.data.country) > (b.data.country) ? 1 : -1;
   });
 });
 
  // Returns a collection of planes in speed order
 //  eleventyConfig.addCollection('planes', collection => {
 //   return collection.getFilteredByGlob('./planes/*.md').sort((a, b) => {
-//     return Number(a.data.maxspeed) < Number(b.data.maxspeed);
+//     return Number(a.data.maxspeed) < Number(b.data.maxspeed) ? 1 : -1;
 //   });
 // });
 

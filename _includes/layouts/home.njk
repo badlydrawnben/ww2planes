@@ -12,8 +12,11 @@
         <ul class="filters flex justify-center">
           <li class="filter mx-6"><label for="country">Country</label> <select class="border p-2 rounded-md" id="country" name="country" @change="$nextTick(() => updateResultsCount());" x-model="country">
               <option value="">Any</option>
-              <option value="USA">USA</option>
+              <option value="Germany">Germany</option>
+              <option value="Italy">Italy</option>
+              <option value="Japan">Japan</option>
               <option value="UK">UK</option>
+              <option value="USA">USA</option>
             </select></li>
           <li class="filter mx-6"><label for="planetype">Plane Type</label> <select class="border p-2 rounded-md" id="planetype" name="planetype" @change="$nextTick(() => updateResultsCount());" x-model="planetype">
               <option value="">Any</option>
@@ -21,6 +24,10 @@
               <option value="Fighter bomber">Fighter bomber</option>
               <option value="Navy Fighter">Navy Fighter</option>
               <option value="Heavy Bomber">Heavy Bomber</option>
+              <option value="Dive Bomber">Dive Bomber</option>
+              <option value="Scout Bomber">Scout Bomber</option>
+              <option value="Torpedo Bomber">Torpedo Bomber</option>
+              <option value="Transport">Transport</option>
           
             </select></li>
             {# 

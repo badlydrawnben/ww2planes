@@ -1,8 +1,14 @@
 backend:
   name: git-gateway
   branch: main # Branch to update
-media_folder: "dist/images/uploads"
-public_folder: "/images/uploads"  
+# media_folder: "dist/images/uploads"
+# public_folder: "/images/uploads"  
+media_library:
+  name: cloudinary
+  output_filename_only: true
+  config:
+    cloud_name: badlydrawnben
+    api_key: 134961552346152
 collections:
  - name: "planes"        #The name of the collection and should match our posts.json file's tag
    label: "Planes"       #The name of the collection on the CMS itself
@@ -14,4 +20,4 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       #- {label: "Date", name: "date", widget: "date", default: ""}
       - {label: "Post Body", name: "body", widget: "markdown"}
-      - {label: "Featured Image", name: "image", widget: "image"} 
+      - {label: "Featured Image", name: "image", widget: "image"}

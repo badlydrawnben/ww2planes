@@ -36,13 +36,25 @@
     }
   </script>
 <script>
-  $(document.body).on('click', "#sortthem", function(){
-    console.log('BWARPEEE');
+  $(document.body).on('click', "#sortspeed", function(){
     var divList = $(".talk");
-    divList.sort(function(a, b){ return $(a).data("maxspeed")-$(b).data("maxspeed")});
-    $(".grid").html(divList);
+    divList.sort(multiSortdown(["maxspeed","country"]));
+    $(".grid").append(divList);
 });
-function multiSort(fields) {
+$(document.body).on('click', "#sortcountry", function(){
+    var divList = $(".talk");
+    divList.sort(multiSortup(["country","maxspeed"]));
+    $(".grid").append(divList);
+});
+function multiSortdown(fields) {
+    return function (a, b) {
+        return fields
+            .map(function (o) {
+               return $(a).data(o) < $(b).data(o) ?  1 :  $(a).data(o) > $(b).data(o) ? -1 : 0 ;
+            }).reduce(function firstNonZeroValue (el,n) { return el ? el : n }, 0);
+    };
+}
+function multiSortup(fields) {
     return function (a, b) {
         return fields
             .map(function (o) {

@@ -1,5 +1,5 @@
 ---
-title: Aichi D3A Type 99
+title: Aichi D3A Type 99 Val
 country: Japan
 planetype: Dive Bomber
 maxspeed: 267

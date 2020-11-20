@@ -1,5 +1,5 @@
 ---
-title: Aichi D3A Val
+title: Aichi D3A "Val"
 country: Japan
 planetype: Dive Bomber
 maxspeed: 267

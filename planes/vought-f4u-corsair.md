@@ -1,7 +1,7 @@
 ---
 title: Vought F4U Corsair
 country: USA
-planetype: Fighter
+planetype: Navy Fighter
 maxspeed: 446
 image: /F4U-photo_kd4kje.jpg
 ---

@@ -1,5 +1,5 @@
 ---
-title: Nakajima B5N Kate
+title: Nakajima B5N 'Kate'
 country: Japan
 planetype: Torpedo Bomber
 maxspeed: 235

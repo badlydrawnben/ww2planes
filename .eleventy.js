@@ -5,8 +5,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
 
   eleventyConfig.addWatchTarget("./src/style.css");
-
-  eleventyConfig.addPassthroughCopy({ "./src/style.css": "./style.css" });
+  eleventyConfig.addWatchTarget("./styles/tailwind.css");
+  // eleventyConfig.addPassthroughCopy({ "./dist/style.css": "./style.css" });
   eleventyConfig.addPassthroughCopy( "./src/images/");
 
   eleventyConfig.addPassthroughCopy({

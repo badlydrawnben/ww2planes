@@ -4,7 +4,7 @@ module.exports = {
     purgeLayersByDefault: true,
   },
   purge: {
-    content: [".src/**/*.md"],
+    content: ["./planes/*.md", "index.md", "./_includes/layouts/*.njk"],
     options: {
       whitelist: [],
     },

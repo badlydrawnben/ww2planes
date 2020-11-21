@@ -1,39 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>
-      Grumman F4F Wildcat
-    </title>
-    <meta charset="UTF-8"/>
-    
-    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
-    <link rel="stylesheet" href="/style.css?v=1605717717510"/>
-    
-    <script src="/js/alpine.js?v=1605717717510"></script>
-    <script src="/js/filter-planes.js?v=1605717717510"></script>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  </head>
-  <body class="bg-gray-200">
-  <div class="">
-    
-<div class="w-full h-screen object-cover overflow-hidden"><img src="https://res.cloudinary.com/badlydrawnben//Grumman-F4F-3-Wildcat_czudjx.jpg" alt="Cloudinary Sample Image"></div>
-<div><img src="/images/USA.svg" class="w-64 h-64 mx-auto -mt-32 border-4 border-white rounded-full shadow-md relative"/></div>
-<div class="container px-3 max-w-5xl">
-<h1 class="text-center">Grumman F4F Wildcat</h1>
-<div class="text-center text-gray-600 tracking-wide text-lg uppercase my-2 font-bold">Fighter-bomber</div>
-<div class="text-center text-gray-600 tracking-wide text-sm uppercase mt-2 leading-10">Max-speed (MPH)<br><span class="text-6xl text-gray-700 font-bold leading-10">420</span></div>
-<hr class="mt-2 mb-4"/>
-  <article>
-    <div class="[ page-content ] [ flow wrapper ] [ flow-space-700 gap-top-700 ]">
-      <img src="https://res.cloudinary.com/badlydrawnben/w_320,f_auto/sample.jpg" alt="Cloudinary Sample Image">
-    </div> 
-  </article>
-  </div>
-
-    </div>
-    <script>
-    if (window.netlifyIdentity) {
+<!doctype html><html lang="en"><head><title>Grumman F4F Wildcat</title><meta charset="UTF-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover"><link rel="stylesheet" href="/style.css?v=1605977227236"><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script><script src="/js/alpine.js?v=1605977227236"></script><script src="/js/filter-planes.js?v=1605977227236"></script><script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script></head><body class="bg-blue-100 pb-16"><div class=""><div class="w-full object-cover overflow-hidden plane-img"><img src="https://res.cloudinary.com/badlydrawnben///Grumman-F4F-3-Wildcat_czudjx.jpg" alt="Cloudinary Sample Image"></div><div><img src="/images/USA.svg" class="w-64 h-64 mx-auto -mt-32 border-4 border-white rounded-full shadow-md relative"></div><div class="container px-3 max-w-5xl"><h1 class="text-center">Grumman F4F Wildcat</h1><div class="text-center text-gray-600 tracking-wide text-lg uppercase my-2 font-bold">Navy Fighter</div><div class="text-center text-gray-600 tracking-wide text-sm uppercase mt-2 leading-10">Max-speed (MPH)<br><span class="text-6xl text-gray-700 font-bold leading-10">318</span></div><hr class="mt-2 mb-4"><article><div class="mx-auto max-w-2xl"><p>The F4F Wildcat fighter was the best US Navy fighter from 1938 to 1943. It was designed in competition with the Brewster F2A Buffalo fighter.</p></div></article></div></div><script>if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
         if (!user) {
           window.netlifyIdentity.on("login", () => {
@@ -41,7 +6,29 @@
           });
         }
       });
-    }
-  </script>
-  </body>
-</html>
+    }</script><script>$(document.body).on('click', "#sortspeed", function(){
+    var divList = $(".talk");
+    divList.sort(multiSortdown(["maxspeed","country"]));
+    $(".grid").append(divList);
+});
+$(document.body).on('click', "#sortcountry", function(){
+    var divList = $(".talk");
+    divList.sort(multiSortup(["country","maxspeed"]));
+    $(".grid").append(divList);
+});
+function multiSortdown(fields) {
+    return function (a, b) {
+        return fields
+            .map(function (o) {
+               return $(a).data(o) < $(b).data(o) ?  1 :  $(a).data(o) > $(b).data(o) ? -1 : 0 ;
+            }).reduce(function firstNonZeroValue (el,n) { return el ? el : n }, 0);
+    };
+}
+function multiSortup(fields) {
+    return function (a, b) {
+        return fields
+            .map(function (o) {
+               return $(a).data(o) > $(b).data(o) ?  1 :  $(a).data(o) < $(b).data(o) ? -1 : 0 ;
+            }).reduce(function firstNonZeroValue (el,n) { return el ? el : n }, 0);
+    };
+}</script></body></html>

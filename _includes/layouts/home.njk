@@ -8,11 +8,11 @@
       {{ content | safe }}
     </div> 
    <figure x-data="alpine.filter()" >
-    <form class="bg-white w-full p-6 rounded-md" @submit="preventDefault();">
-      <fieldset class="w-full">
+    <form class="bg-white flex flex-wrap md:flex-no-wrap justify-center w-full p-6 rounded-md" @submit="preventDefault();">
+      <fieldset class="flex justify-center">
         <legend class="sr-only">Filter planes</legend>
-        <ul class="filters flex justify-center">
-          <li class="filter mx-6"><label for="country">Country</label> <select class="border p-2 rounded-md" id="country" name="country" @change="$nextTick(() => updateResultsCount());" x-model="country">
+        <ul class="filters flex flex-wrap md:flex-no-wrap">
+          <li class="filter w-full md:w-auto md:mx-6 flex justify-between items-center mb-2 md:mb-0"><label for="country" class="md:mr-1">Country</label> <select class="border bg-gray-100 p-2 rounded-md" id="country" name="country" @change="$nextTick(() => updateResultsCount());" x-model="country">
               <option value="">Any</option>
               <option value="Germany">Germany</option>
               <option value="Italy">Italy</option>
@@ -20,7 +20,7 @@
               <option value="UK">UK</option>
               <option value="USA">USA</option>
             </select></li>
-          <li class="filter mx-6"><label for="planetype">Plane Type</label> <select class="border p-2 rounded-md" id="planetype" name="planetype" @change="$nextTick(() => updateResultsCount());" x-model="planetype">
+          <li class="filter w-full md:w-auto md:mx-6 flex justify-between items-center mb-2 md:mb-0"><label for="planetype" class="md:mr-1">Plane Type</label> <select class="border bg-gray-100 p-2 rounded-md" id="planetype" name="planetype" @change="$nextTick(() => updateResultsCount());" x-model="planetype">
               <option value="">Any</option>
               <option value="Fighter">Fighter</option>
               <option value="Fighter Bomber">Fighter Bomber</option>
@@ -32,15 +32,18 @@
               <option value="Transport">Transport</option>
           
             </select></li>
-        <a id="sortspeed" class="py-2 px-5 bg-blue-900 text-white mx-1 rounded-md">Sort by top speed</a>
-        <a id="sortcountry" class="py-2 px-5 bg-blue-900 text-white mx-1 rounded-md">Sort by country</a>
         </ul>
       </fieldset>
+        <div class="flex">
+        <a id="sortspeed" class="block cursor-pointer leading-tight text-center py-2 px-5 bg-blue-900 text-white mr-1 md:mx-1 rounded-md hover:bg-blue-700">Sort by top speed</a>
+        <a id="sortcountry" class="block cursor-pointer leading-tight text-center py-2 px-5 bg-blue-900 text-white ml-1 md:mx-1 rounded-md hover:bg-blue-700">Sort by country</a>
+        </div>
     </form>
+     </figure>
     <div>
-    <ul class="list--unstyled grid gap-4 grid-cols-3 mt-4">
+    <ul class="list--unstyled grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-4">
 {%- for plane in collections.planes -%}
-  <li data-maxspeed="{{ plane.data.maxspeed }}" data-country="{{ plane.data.country }}" class="talk rounded-lg bg-white js-talk overflow-hidden shadow-md"
+  <li data-maxspeed="{{ plane.data.maxspeed }}" data-country="{{ plane.data.country }}" class="talk rounded-lg bg-white js-talk overflow-hidden shadow-md border-2 border-transparent hover:shadow-xl hover:border-2 hover:border-blue-300"
   x-show="(!country || country === '{{ plane.data.country }}') &amp;&amp; (!planetype || planetype === '{{ plane.data.planetype }}')"
   >
   <a href="{{ plane.url}}">
@@ -59,7 +62,7 @@
 {%- endfor -%}
 </ul>
 </div>
-  </figure>
+ 
   
   </div>
 {% endblock %}

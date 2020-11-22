@@ -12,11 +12,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
     <link rel="stylesheet" href="/style.css?v={% version %}"/>
     {% block head %}{% endblock %}
-    {# <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> #}
-
+    
     <script src="/js/alpine.js?v={% version %}"></script>
-    <script src="/js/filter-planes.js?v={% version %}"></script>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="/js/filter-planes.js?v={% version %}" defer></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
   </head>
   <body class="bg-blue-100 pb-16">
   <div class="">

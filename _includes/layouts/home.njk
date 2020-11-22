@@ -47,7 +47,7 @@
   x-show="(!country || country === '{{ plane.data.country }}') &amp;&amp; (!planetype || planetype === '{{ plane.data.planetype }}')"
   >
   <a href="{{ plane.url}}">
-  <div class="object-cover w-full">
+  <div class="object-cover w-full plane-img">
   {% newcloudinaryImage plane.data.image, "w_360,h_240,f_auto", plane.data.title,"360","240" %} 
   </div>
   <div class="p-2 flex flex-col relative text-center">

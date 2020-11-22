@@ -20,11 +20,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('admin'); // Netlify CMS
 
   eleventyConfig.cloudinaryCloudName = 'badlydrawnben'
-  eleventyConfig.addShortcode('cloudinaryImage', function (path, transforms, alt) {
-    return `<img src="https://res.cloudinary.com/${eleventyConfig.cloudinaryCloudName}/${transforms}/${path}" alt="${alt}">`
+  eleventyConfig.addShortcode('newcloudinaryImage', function (path, transforms, alt, width, height) {
+    return `<img src="https://res.cloudinary.com/${eleventyConfig.cloudinaryCloudName}/${transforms}/${path}" alt="${alt}" loading="lazy" width="${width}" height="${height}">`
   })
 
-  eleventyConfig.addPlugin( pluginCloudinaryImage )
+   eleventyConfig.addPlugin( pluginCloudinaryImage )
 
 
   eleventyConfig.addShortcode("version", function () {

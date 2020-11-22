@@ -35,8 +35,8 @@
         </ul>
       </fieldset>
         <div class="flex">
-        <a id="sortspeed" class="block cursor-pointer leading-tight text-center py-2 px-5 bg-blue-900 text-white mr-1 md:mx-1 rounded-md hover:bg-blue-700">Sort by top speed</a>
-        <a id="sortcountry" class="block cursor-pointer leading-tight text-center py-2 px-5 bg-blue-900 text-white ml-1 md:mx-1 rounded-md hover:bg-blue-700">Sort by country</a>
+        <a href="#" id="sortspeed" class="block cursor-pointer leading-tight text-center py-2 px-5 bg-blue-900 text-white mr-1 md:mx-1 rounded-md hover:bg-blue-700">Sort by top speed</a>
+        <a href="#" id="sortcountry" class="block cursor-pointer leading-tight text-center py-2 px-5 bg-blue-900 text-white ml-1 md:mx-1 rounded-md hover:bg-blue-700">Sort by country</a>
         </div>
     </form>
      
@@ -48,12 +48,12 @@
   >
   <a href="{{ plane.url}}">
   <div class="object-cover w-full">
-  {% cloudinaryImage plane.data.image, "w_360,h_240,f_auto", "Cloudinary Sample Image" %} 
+  {% cloudinaryImage plane.data.image, "w_360,h_240,f_auto", plane.data.title %} 
   </div>
   <div class="p-2 flex flex-col relative text-center">
   {# <div class="text-center text-gray-600 text-sm">{{ plane.data.country }}</div> #}
-  <div><img src="/images/{{plane.data.country}}.svg" class="w-16 h-16 mx-auto -mt-10 border-4 border-white rounded-full shadow-md"/></div>
-  <h3 class="text-center text-xl font-semibold mt-2">{{ plane.data.title }}</h3>
+  <div><img src="/images/{{plane.data.country}}.svg" class="w-16 h-16 mx-auto -mt-10 border-4 border-white rounded-full shadow-md" alt="{{plane.data.country}} flag icon"/></div>
+  <h2 class="text-center text-xl font-semibold mt-2">{{ plane.data.title }}</h2>
   <div class="mt-2 text-gray-600"><span class="text-sm text-gray-500">Max speed:</span> {{ plane.data.maxspeed }} <span class="text-sm text-gray-500">MPH</span></div>
   <div class="text-gray-500 uppercase text-sm font-semibold tracking-wide mt-2 mb-4">{{ plane.data.planetype }} </div>
   </div> 

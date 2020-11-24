@@ -9,9 +9,9 @@ The Kittyhawks and Tomahawks of the Royal Navy and Royal Air Force were built as
 
 <table>
 <tr>
-<td>British</td>
-<td style="padding:0 10px">  </td>
-<td>American</td>
+<td style="width:40%"><strong>British</strong></td>
+<td style="width:15%">  </td>
+<td style="width:40%"><strong>American</strong></td>
 </tr>
 <tr>
 <td>Tomahawk I</td>

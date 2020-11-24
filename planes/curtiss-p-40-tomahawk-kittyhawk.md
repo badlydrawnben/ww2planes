@@ -17,11 +17,19 @@ The Kittyhawks and Tomahawks of the Royal Navy and Royal Air Force were built as
 
 </tr>
 
+<tr>
+
+<td>**Tomahawk I**</td>
+
+<td>**Hawk 81A-1**</td>
+
+</tr>
+
 </table>
 
  **\    American**
 
-**Tomahawk I                     =                    Hawk 81A-1**
+ **\=**                    
 
 **Tomahawk IIA                 =                    Hawk 81A-2/P-40B**
 

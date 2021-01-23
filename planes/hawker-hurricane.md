@@ -1,7 +1,7 @@
 ---
 title: Hawker Hurricane
 country: UK
-planetype: Navy Fighter
+planetype: Fighter
 maxspeed: 339
 image: /img_g3v2cl.jpg
 ---

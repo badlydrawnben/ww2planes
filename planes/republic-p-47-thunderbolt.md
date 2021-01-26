@@ -1,7 +1,7 @@
 ---
 title: Republic P-47 Thunderbolt
 country: USA
-planetype: Fighter
+planetype: Fighter Bomber
 maxspeed: 433
 image: /P3_20_281_29_ddosi8.jpg
 ---

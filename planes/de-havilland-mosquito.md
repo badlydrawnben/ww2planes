@@ -1,7 +1,7 @@
 ---
 title: De Havilland Mosquito
 country: UK
-planetype: Fighter
+planetype: Fighter Bomber
 maxspeed: 400
 image: /De_Havilland_Mosquito_IV_ExCC_cefuu4.jpg
 ---

@@ -23,4 +23,4 @@ collections:
       - {label: "Max speed", name: "maxspeed", widget: "number"}
       #- {label: "Date", name: "date", widget: "date", default: ""}
       - {label: "Post Body", name: "body", widget: "markdown"}
-      - {label: "Featured Image", name: "image", widget: "image"}
+      - {label: "Featured Image", name: "image", widget: "image"} 

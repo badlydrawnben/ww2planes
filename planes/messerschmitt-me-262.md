@@ -1,7 +1,7 @@
 ---
 title: Messerschmitt Me 262
 country: Germany
-planetype: Fighter
+planetype: Jet
 maxspeed: 540
 image: /zxbklsysaphmni0or4hl.jpg
 ---
